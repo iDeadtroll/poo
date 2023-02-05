@@ -28,15 +28,44 @@ public class Problema1 {
         numero2 = (int)IO.readNumber();
         //Mostramos las opciones disponibles del programa
        
-        System.out.println("Selecciona una de las opciones (1-4)");
-        System.out.println("1. Sumar los numeros");
-        System.out.println("2. Restar los numeros");
-        System.out.println("3. Multiplicar los numeros");
-        System.out.println("4. Dividir los numeros");
-        System.out.print("Opcion: ");
+       
+       // Solución con Do-While
+       /*
+       int opcion = 0;
+       boolean firstTime = true;
+       do {
+            if(!firstTime) { // para ahorrarnos este boolean podemos pasarlo debajo de la lectura del teclado
+                System.out.println("No has elegido un opcion válida");
+            }
+            System.out.println("Selecciona una de las opciones (1-4)");
+            System.out.println("1. Sumar los numeros");
+            System.out.println("2. Restar los numeros");
+            System.out.println("3. Multiplicar los numeros");
+            System.out.println("4. Dividir los numeros");
+            System.out.print("Opcion: ");
+            opcion = (int) IO.readNumber();
+            firstTime = false;
+        } while(opcion < 1 || opcion > 4);
+        */
+       int opcion = 0;
+       while(volverSolicitarOpcion(opcion)) {
+           System.out.println("Selecciona una de las opciones (1-4)");
+            System.out.println("1. Sumar los numeros");
+            System.out.println("2. Restar los numeros");
+            System.out.println("3. Multiplicar los numeros");
+            System.out.println("4. Dividir los numeros");
+            System.out.print("Opcion: ");
+            opcion = (int) IO.readNumber();
+            
+            if(opcionCorrect(opcion)) {
+                System.out.println("No has elegido un opcion válida");
+            }
+       }
+       
         //Mostramos los resultados en funcion de la opcion seleccionada
-        int opcion = (int) IO.readNumber();
-        switch(opcion){
+        float result = calcular(numero1, numero2, opcion);
+        System.out.println("El resulttado de la operación es " + result);
+        switch (opcion) {
             case 1:
                 suma = numero1 + numero2;
                 System.out.println("La suma de los dos numeros es: " + suma);
@@ -53,11 +82,29 @@ public class Problema1 {
                 division = ((float)numero1 / numero2);
                 System.out.println("La division de los dos numeros es: " + division );
             break;
-            default:
-                System.out.println("No has elegido un opcion valida");
-                
         }
         
+        
+    }
+    
+    /**
+     * Método que evalua si es necesario pedir nuevamente la opción
+     * @param opt -> valor introducido por teclado del usuario
+     * @return true: cuando hay que solicitar opcion | false: no se solicita 
+     */
+    private static boolean volverSolicitarOpcion(int opt) {
+        return opcionCorrect(opt);
+    }
+    
+    private static boolean opcionCorrect(int opt) {
+        boolean result = false;
+        if(opt < 1 || opt > 4) {
+            result = true;
+        }
+        return result;
+    }
+    
+    private static float calcular(int valor1, int valor2, int oper) {
         
     }
     
