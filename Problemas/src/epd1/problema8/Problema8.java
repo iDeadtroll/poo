@@ -4,7 +4,7 @@ Los años bisiestos son múltiplos de cuatro, sin embargo, los múltiplos de 100
 cuando a la vez son múltiplos de 400 (por ejemplo 1800 no es bisiesto, mientras
 que 2000 si lo es).
  */
-package pb;
+package epd1.problema8;
 
 import poo.io.IO;
 

@@ -2,7 +2,7 @@
 P7. Escriba un programa que, dado un número entero por parte del 
 usuario, calcule el factorial del mismo y lo muestre por pantalla.
  */
-package pb;
+package epd1.problema7;
 
 import poo.io.IO;
 

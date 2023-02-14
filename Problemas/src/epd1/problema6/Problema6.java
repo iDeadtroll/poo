@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pb;
+package epd1.problema6;
 
 import poo.io.IO;
 

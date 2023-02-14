@@ -1,4 +1,4 @@
-package pb;
+package epd1.problema3;
 
 import poo.io.IO;
 

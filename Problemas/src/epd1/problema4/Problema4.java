@@ -5,7 +5,7 @@ la temperatura actual, y la temperatura deseada por debajo de la cual se activar
 acondicionado frío (un mensaje por pantalla similar al caso anterior). Si la temperatura actual
 coincide con la temperatura se indicará un mensaje por pantalla advirtiendo de ello.
  */
-package pb;
+package epd1.problema4;
 
 public class Problema4 {
 

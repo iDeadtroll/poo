@@ -9,7 +9,7 @@
   2. Restar los números.
   3. Multiplicar los números.
   4. Dividir los números.*/
-package pb;
+package epd1.problema1;
 
 import poo.io.IO;
 
