@@ -4,6 +4,8 @@ package epd1.problemas.poo;
  * Triangulo donde su base o altura no supera los 100cm
  * @author mamisho
  */
+
+//Clase que implemta una interfas
 public class Triangulo implements IFigura {
     private int base;
     private int altura;
