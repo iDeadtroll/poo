@@ -71,7 +71,7 @@ public class Problema3 {
         System.out.println(t2.getAltura());
         
         System.out.println("\n *************** T3 ***************");
-        Triangulo t3 = new Triangulo(2, 4);
+        Triangulo t3 = new Triangulo(1, 2);
         t3.printPerimetro();
         t3.printArea();
         
@@ -93,5 +93,12 @@ public class Problema3 {
         System.out.println(f2.calcularArea());
         System.out.println(f3.getTotalLados());
         System.out.println(f3.calcularArea());
+        
+        if (t2 == t3){
+            System.out.println("Son iguales");
+        }
+        else{
+            System.out.println("No son iguales");
+        }
     }
 }

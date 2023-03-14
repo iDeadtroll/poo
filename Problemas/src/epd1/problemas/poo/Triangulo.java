@@ -63,4 +63,10 @@ public class Triangulo implements IFigura {
     public int getTotalLados() {
         return 3;
     }
+    
+    public boolean equals(Object o){
+        Triangulo t = (Triangulo)o;
+        boolean iguales=false;
+        return this.base.equals(t.base) && this.altura.equals(t.altura);
+    }
 }
