@@ -99,11 +99,10 @@ public class VentanaMateriales {
         materiales.tablasToString();
         System.out.println("Seleccione el ID de la tabla que desea eleminar: ");
         int id = scanner.nextInt();
- 
-            TablaSurf tabla = materiales.getTabla(id);
-            materiales.eliminaTabla(tabla);
 
-        
+        TablaSurf tabla = materiales.getTabla(id);
+        materiales.eliminaTabla(tabla);
+
     }
 
     private void mostrarListadoTablas() {
@@ -128,11 +127,9 @@ public class VentanaMateriales {
         int talla = scanner.nextInt();
 
         System.out.print("\nmangasLargas: ");
-            String val1 = scanner.nextLine();
-            String val2 = "si";
-            if(val1.equals(val2)){        
-                boolean mangasLargas = true;
-            }
+        String val1 = scanner.nextLine().toUpperCase();
+        String val2 = "si".toUpperCase();
+        boolean mangasLargas = val1.equals(val2);
         System.out.print("\npiernasLargas: ");
         boolean piernasLargas = scanner.nextBoolean();
 
@@ -152,10 +149,9 @@ public class VentanaMateriales {
         materiales.trajesToString();
         System.out.println("Seleccione el ID de la tabla que desea eleminar: ");
         int id = scanner.nextInt();
-            Neopreno traje = materiales.getTraje(id);
-            materiales.eliminaTraje(traje);
+        Neopreno traje = materiales.getTraje(id);
+        materiales.eliminaTraje(traje);
 
-        
     }
 
     private void mostrarListadoTrajes() {
