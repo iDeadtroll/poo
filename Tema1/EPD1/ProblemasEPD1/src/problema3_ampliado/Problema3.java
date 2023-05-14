@@ -1,8 +1,13 @@
-package epd1.problemas;
+package problema3_ampliado;
+//import problema3_ampliado_poo;
+//import epd1.problemas.poo.Cuadrado;
 
-import epd1.problemas.poo.Cuadrado;
-import epd1.problemas.poo.IFigura;
-import epd1.problemas.poo.Triangulo;
+import problema3_ampliado_poo.Cuadrado;
+import problema3_ampliado_poo.IFigura;
+import problema3_ampliado_poo.Triangulo;
+
+//import epd1.problemas.poo.IFigura;
+//import epd1.problemas.poo.Triangulo;
 
 /**
  *

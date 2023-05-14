@@ -1,5 +1,5 @@
 /* Ejercicio 1 de la EPD1 de POO */
-package ej;
+package ejerciciosepd1;
 
 public class Ejercicio1 {
 

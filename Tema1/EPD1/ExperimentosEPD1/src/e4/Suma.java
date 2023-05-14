@@ -16,6 +16,6 @@ public class Suma {
         int x = Integer.parseInt(args[0]);
         int y = Integer.parseInt(args[1]);
         int suma = x + y;
-        System.out.println("La suma es de " + args[0] + " y " + args[1] + " es " + suma);
+        System.out.println("La suma de " + args[0] + " y " + args[1] + " es " + suma);
     }
 }
