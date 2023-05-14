@@ -130,8 +130,9 @@ public class VentanaMateriales {
         System.out.print("\nmangasLargas: ");
             String val1 = scanner.nextLine();
             String val2 = "si";
+            boolean mangasLargas;
             if(val1.equals(val2)){        
-                boolean mangasLargas = true;
+                mangasLargas = true;
             }
         System.out.print("\npiernasLargas: ");
         boolean piernasLargas = scanner.nextBoolean();
