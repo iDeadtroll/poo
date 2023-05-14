@@ -114,5 +114,13 @@ public class CentralMateriales {
     public void setTablas(TablaSurf[] tablas) {
         this.tablas = tablas;
     }
+
+    public Neopreno[] getTrajes() {
+        return trajes;
+    }
+
+    public void setTrajes(Neopreno[] trajes) {
+        this.trajes = trajes;
+    }
     
 }

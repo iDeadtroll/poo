@@ -2,9 +2,8 @@
 package reserva;
 
 import cliente.ICliente;
-import material.IReservable;
-
 import java.util.GregorianCalendar;
+import material.IReservable;
 
 public class Reserva {
     private static int numReserva = 0;
@@ -58,4 +57,7 @@ public class Reserva {
         return total;
     }
     
+    public IReservable[] getMateriales() {
+        return this.materiales;
+    }
 }
