@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package experimentosepd1;
+package javaapplication17;
 
 /**
  *
  * @author Deadtroll
  */
-public class ExperimentosEPD1 {
+public class JavaApplication17 {
 
     /**
      * @param args the command line arguments
