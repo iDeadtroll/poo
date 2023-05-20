@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Calculadora;
+package com.epic.fortnite.calculadora;
 
 /**
  *
@@ -11,9 +11,8 @@ package Calculadora;
  */
 public class Principal {
     public static void main(String[] args){
-        OperacionCalculadora operaciones = null;
         
-        Calculadora calc = new Calculadora(operaciones);
-        calc.mostrarOpcionesCalculadora();
+        Calculadora calc = new Calculadora();
+        calc.encenderCalculadora();
     }
 }
