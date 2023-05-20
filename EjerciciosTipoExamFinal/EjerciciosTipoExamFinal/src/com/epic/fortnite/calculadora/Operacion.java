@@ -16,14 +16,24 @@ public class Operacion {
 
     private Double resultado;
     private final List<String> operaciones;
-
+    private Suma suma;
+    private Resta resta;
+    private Multiplica multiplica;
+    private Divide divide;
+    private Raiz raiz;
+    
     public Operacion() {
         this.operaciones = new ArrayList<>();
-        this.operaciones.add("Suma");
-        this.operaciones.add("Resta");
-        // this.operaciones.add("Multiplica");
-        this.operaciones.add("Divide");
-        this.operaciones.add("Raiz");
+        suma = new Suma();
+        this.operaciones.add(suma.getName());
+        resta = new Resta();
+        this.operaciones.add(resta.getName());
+        multiplica = new Multiplica();
+        this.operaciones.add(multiplica.getName());
+        divide = new Divide();
+        this.operaciones.add(divide.getName());
+        raiz = new Raiz();
+        this.operaciones.add(raiz.getName());
     }
     
     public Double ejecutar(Integer opc, Double val1, Double val2) {
