@@ -9,18 +9,19 @@ package com.epic.fortnite.calculadora;
  *
  * @author Deadtroll
  */
-public class Suma implements IOperacion{
+public class Suma implements IOperacion {
+
     private String name;
-    
+
     @Override
-    public String getName(){
-        this.name = getClass().toString();
+    public String getNombre() {
+        this.name = getClass().getSimpleName();
         return name;
     }
-    
+
     @Override
-    public Double ejecutar(double val1, double val2){
+    public Double ejecutar(double val1, double val2) {
         return val1 + val2;
     }
-    
+
 }

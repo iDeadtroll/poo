@@ -10,6 +10,6 @@ package com.epic.fortnite.calculadora;
  * @author Deadtroll
  */
 public interface IOperacion {
-    public String getName();
+    public String getNombre();
     public Double ejecutar(double val1, double val2);
 }

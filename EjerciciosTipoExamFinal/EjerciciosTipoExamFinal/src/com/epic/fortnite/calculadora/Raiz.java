@@ -13,8 +13,8 @@ public class Raiz implements IOperacion{
     private String name;
     
     @Override
-    public String getName(){
-        this.name = getClass().toString();
+    public String getNombre(){
+        this.name = getClass().getSimpleName();
         return name;
     }
     

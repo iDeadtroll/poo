@@ -15,47 +15,21 @@ import java.util.List;
 public class Operacion {
 
     private Double resultado;
-    private final List<String> operaciones;
-    private Suma suma;
-    private Resta resta;
-    private Multiplica multiplica;
-    private Divide divide;
-    private Raiz raiz;
+    private final List<IOperacion> operaciones;
+
     
     public Operacion() {
         this.operaciones = new ArrayList<>();
-        suma = new Suma();
-        this.operaciones.add(suma.getName());
-        resta = new Resta();
-        this.operaciones.add(resta.getName());
-        multiplica = new Multiplica();
-        this.operaciones.add(multiplica.getName());
-        divide = new Divide();
-        this.operaciones.add(divide.getName());
-        raiz = new Raiz();
-        this.operaciones.add(raiz.getName());
+        this.operaciones.add(new Suma());
+        this.operaciones.add(new Resta());
+        this.operaciones.add(new Multiplica());
+        this.operaciones.add(new Divide());
+        this.operaciones.add(new Raiz());
     }
     
     public Double ejecutar(Integer opc, Double val1, Double val2) {
-        Double resultado = null;
-        switch(opc) {
-            case 0:
-                resultado = suma(val1, val2);
-            break;
-            case 1:
-                resultado = resta(val1, val2);
-            break;
-            case 2:
-                resultado = multiplica(val1, val2);
-            break;
-            case 3:
-                resultado = divide(val1, val2);
-                break;
-            case 4:
-                resultado = raiz(val1, val2);
-            break;
-        }
-        return resultado;
+        IOperacion oper = this.operaciones.get(opc);
+        return oper.ejecutar(val1,val2);
     }
 
     public Double getResultado() {
@@ -63,7 +37,13 @@ public class Operacion {
     }
 
     public List<String> getOperaciones() {
-        return operaciones;
+        List<String> listasOperaciones = new ArrayList<>() ;
+        
+        for (IOperacion oper: operaciones ){
+            String name = oper.getNombre();
+            listasOperaciones.add(name); 
+        }
+        return listasOperaciones;
     }
 
     private Double suma(Double val1, Double val2) {
