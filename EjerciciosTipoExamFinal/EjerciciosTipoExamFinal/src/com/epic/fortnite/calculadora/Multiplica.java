@@ -11,18 +11,15 @@ package com.epic.fortnite.calculadora;
  */
 public class Multiplica implements IOperacion{
     private String name;
-    public Multiplica(String name){
-        name = this.name;
-    }
     
     @Override
     public String getName(){
+        this.name = getClass().toString();
         return name;
     }
     
     @Override
     public Double ejecutar(double val1, double val2){
-        Double Multiplica = val1 * val2;
-        return Multiplica;
+        return val1 * val2;
     }
 }
