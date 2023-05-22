@@ -9,21 +9,21 @@ import java.util.Objects;
 
 /**
  *
- * @author Deadtroll
+ * @author mamisho
  */
-public class Raiz implements IOperacion {
+public class Factorial implements IOperacion {
+    
     private String name;
     
     @Override
-    public String getNombre(){
-        this.name = getClass().getSimpleName();
-        return name;
+    public String getNombre() {
+        return getClass().getSimpleName();
     }
-    
+
     @Override
-    public Double ejecutar(double val1, double val2){
-        return Math.pow(val1, (double) 1 / val2);
-    }
+    public Double ejecutar(double val1, double val2) {
+        return 1D;
+    } 
 
     @Override
     public boolean equals(Object obj) {
@@ -36,15 +36,22 @@ public class Raiz implements IOperacion {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Raiz other = (Raiz) obj;
+        final Factorial other = (Factorial) obj;
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         return true;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 59 * hash + Objects.hashCode(this.name);
+        return hash;
+    }
+
     
-    
-    
+
     @Override
     public int compareTo(Object o) {
         IOperacion oper = (IOperacion) o;
@@ -59,4 +66,6 @@ public class Raiz implements IOperacion {
         
         return -1;
     }
+    
+    
 }

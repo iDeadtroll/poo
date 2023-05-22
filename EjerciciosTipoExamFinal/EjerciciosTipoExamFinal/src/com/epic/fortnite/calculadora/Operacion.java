@@ -6,6 +6,7 @@
 package com.epic.fortnite.calculadora;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -20,11 +21,13 @@ public class Operacion {
     
     public Operacion() {
         this.operaciones = new ArrayList<>();
+        this.operaciones.add(new Raiz());
         this.operaciones.add(new Suma());
         this.operaciones.add(new Resta());
         this.operaciones.add(new Multiplica());
+        this.operaciones.add(new Factorial());
         this.operaciones.add(new Divide());
-        this.operaciones.add(new Raiz());
+        Collections.sort(operaciones);
     }
     
     public Double ejecutar(Integer opc, Double val1, Double val2) {
@@ -45,25 +48,4 @@ public class Operacion {
         }
         return listasOperaciones;
     }
-
-    private Double suma(Double val1, Double val2) {
-        return val1 + val2;
-    }
-
-    private Double resta(Double val1, Double val2) {
-        return val1 - val2;
-    }
-
-    private Double multiplica(Double val1, Double val2) {
-        return val1 * val2;
-    }
-
-    private Double divide(Double val1, Double val2) {
-        return val1 / val2;
-    }
-    
-    private Double raiz(Double val1, Double val2) {
-        return Math.pow(val1, (double) 1 / val2);
-    }
-
 }
