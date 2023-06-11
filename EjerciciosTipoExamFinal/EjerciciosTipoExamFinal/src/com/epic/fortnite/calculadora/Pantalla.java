@@ -29,9 +29,16 @@ public class Pantalla {
         System.out.println(salir + " " + "Salir");
         
         System.out.println("\nOrden alfabetico");
-        Collections.sort(operaciones);
+        Collections.sort(operaciones, new Comparador_Array_Strings());
         for (int i=0; i < operaciones.size(); i++) {
             System.out.println( i + " " + this.operaciones.get(i));
+        }
+        
+        System.out.println("\nOrden arternativo");
+        Collections.sort(operaciones);
+        
+        for (int i = 0 ; i < operaciones.size() ; i++){
+            System.out.println(i + " " + this.operaciones.get(i));
         }
         
     }

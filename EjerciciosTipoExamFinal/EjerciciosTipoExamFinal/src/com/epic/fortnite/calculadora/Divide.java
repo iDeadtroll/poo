@@ -58,4 +58,16 @@ public class Divide implements IOperacion {
         
         return -1;
     }
+    
+    public Integer getCaracter(){
+        char caracter = 'a';
+        Integer contador = 0;
+        for ( int i = 0 ; i < this.getNombre().length() ; i++  ){
+            if (this.getNombre().charAt(i) == caracter){
+                contador++;
+            }
+                
+        }
+        return contador;
+    }
 }

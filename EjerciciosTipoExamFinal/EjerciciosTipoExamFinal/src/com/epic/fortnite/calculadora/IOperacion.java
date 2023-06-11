@@ -1,17 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Interfaz que implementan las clases que conforman el vector operaciones.
  */
 package com.epic.fortnite.calculadora;
 
-/**
- *
- * @author Deadtroll
- */
+
 public interface IOperacion extends Comparable {
     public String getNombre();
     public Double ejecutar(double val1, double val2);
+    public Integer getCaracter();
     
     /*@Override
     public default int compareTo(Object o) {

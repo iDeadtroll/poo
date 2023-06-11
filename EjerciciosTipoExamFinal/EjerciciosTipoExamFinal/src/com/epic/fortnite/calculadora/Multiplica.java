@@ -64,6 +64,18 @@ public class Multiplica implements IOperacion {
         return -1;
     }
     
+    public Integer getCaracter(){
+        char caracter = 'a';
+        Integer contador = 0;
+        for ( int i = 0 ; i < this.getNombre().length() ; i++  ){
+            if (this.getNombre().charAt(i) == caracter){
+                contador++;
+            }
+                
+        }
+        return contador;
+    }
+    
 
     /*@Override
     public int compareTo(IOperacion o) {

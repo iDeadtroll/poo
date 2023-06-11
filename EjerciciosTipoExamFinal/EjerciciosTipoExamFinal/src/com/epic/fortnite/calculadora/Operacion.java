@@ -16,7 +16,7 @@ import java.util.List;
 public class Operacion {
 
     private Double resultado;
-    private final List<IOperacion> operaciones;
+    private List<IOperacion> operaciones;
 
     
     public Operacion() {
@@ -25,13 +25,14 @@ public class Operacion {
         this.operaciones.add(new Suma());
         this.operaciones.add(new Resta());
         this.operaciones.add(new Multiplica());
-        this.operaciones.add(new Factorial());
+//        this.operaciones.add(new Factorial());
         this.operaciones.add(new Divide());
-        Collections.sort(operaciones);
+        Collections.sort(operaciones, new Comparador_Array_IOperacion());
     }
     
     public Double ejecutar(Integer opc, Double val1, Double val2) {
         IOperacion oper = this.operaciones.get(opc);
+        
         return oper.ejecutar(val1,val2);
     }
 
@@ -40,12 +41,12 @@ public class Operacion {
     }
 
     public List<String> getOperaciones() {
-        List<String> listasOperaciones = new ArrayList<>() ;
+        List<String> listaOperaciones = new ArrayList<>() ;
         
         for (IOperacion oper: operaciones ){
             String name = oper.getNombre();
-            listasOperaciones.add(name); 
+            listaOperaciones.add(name); 
         }
-        return listasOperaciones;
+        return listaOperaciones;
     }
 }

@@ -95,7 +95,7 @@ public class VentanaMateriales {
 
     private void mostrarBajaTabla() {
         Scanner scanner = new Scanner(System.in);
-        CentralMateriales m = new CentralMateriales();
+ 
         materiales.tablasToString();
         System.out.println("Seleccione el ID de la tabla que desea eleminar: ");
         int id = scanner.nextInt();

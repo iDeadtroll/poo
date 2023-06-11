@@ -1,16 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
  */
 package com.epic.fortnite.calculadora;
 
 import java.util.Objects;
 
-/**
- *
- * @author Deadtroll
- */
 public class Suma implements IOperacion {
 
     private String name;
@@ -60,4 +54,22 @@ public class Suma implements IOperacion {
         
         return -1;
     }
+    
+    
+    @Override
+    public Integer getCaracter(){
+        char caracter = 'a';
+        Integer contador = 0;
+        for ( int i = 0 ; i < this.getNombre().length() ; i++  ){
+            if (this.getNombre().charAt(i) == caracter){
+                contador++;
+            }
+                
+        }
+        return contador;
+    }
+
+    
+    
+    
 }
