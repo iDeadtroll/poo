@@ -1,20 +1,3 @@
-<<<<<<< Updated upstream:Pruebas/src/EjemploComparadores/Persona.java
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package EjemploComparadores;
-
-/**
- *
- * @author Deadtroll
- */
-public class Persona {
-    private String nombre, apellido;
-    private int edad;
-    
-=======
 
 package examenPooCorregido;
 
@@ -93,5 +76,4 @@ public class Abonado extends Persona {
         return true;
     }
 
->>>>>>> Stashed changes:Pruebas/src/examenPooCorregido/Abonado.java
 }

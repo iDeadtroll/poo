@@ -19,7 +19,6 @@ public class Persona {
         return nombre;
     }
     
-    
     public void setNombre(String nombre){
         this.nombre = nombre;
     }
@@ -43,12 +42,6 @@ public class Persona {
     @Override
     public String toString() {
         return apellido + ", " + nombre + " - " + dni;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        return hash;
     }
 
     @Override

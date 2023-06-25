@@ -51,7 +51,6 @@ public class Fecha implements Comparable {
         int anyo = calendario.get(Calendar.YEAR);
         return new Fecha(dia, mes, anyo);
     }
-
     
     @Override
     public int compareTo(Object o) {
