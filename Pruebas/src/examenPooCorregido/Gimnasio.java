@@ -46,7 +46,7 @@ public class Gimnasio {
     }
 
     public void ordenarAbonados(Comparator c) {
-        Arrays.sort(abonados, 0, numAbonados, c);
+        Arrays.sort(abonados, 0, numAbonados-1, c);
     }
 
     @Override
