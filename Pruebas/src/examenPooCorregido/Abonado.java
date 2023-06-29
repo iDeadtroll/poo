@@ -70,10 +70,7 @@ public class Abonado extends Persona {
             return false;
         }
         final Abonado other = (Abonado) obj;
-        if (!Objects.equals(getDni(), other.getDni())) {
-            return false;
-        }
-        return true;
+        return Objects.equals(getDni(), other.getDni());
     }
 
 }
