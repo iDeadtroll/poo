@@ -15,8 +15,15 @@ public class VentaPublica extends Transacccion implements Venta{
     private String vendedor;
     
     
-    public VentaPublica(String direccion, String poblacion, int codigoPostal, String provincia, int tipoInmueble) {
+    public VentaPublica(int diaEscritura, int mesEscritura, int anyoEscritura, String direccion, String poblacion, int codigoPostal, String provincia, int tipoInmueble) {
 	super(direccion, poblacion, codigoPostal, provincia, tipoInmueble);
+        this.diaEscritura = diaEscritura;
+        this.mesEscritura = mesEscritura;
+        this.anyoEscritura = anyoEscritura;
+        this.vpo = false;
+        this.valorCatastral = 0;
+        this.comprador = "";
+        this.vendedor = "";
     }
 
     public int getDiaEscritura() {
@@ -86,9 +93,9 @@ public class VentaPublica extends Transacccion implements Venta{
 		"\nVendedor: " + vendedor + 
 		"\nValor catastral: " + valorCatastral + 
 		"\nVPO: " + vpo +
-		"\nFecha escritura: " + diaEscritura + mesEscritura + anyoEscritura +
+		"\nFecha escritura: " + diaEscritura +"/"+ mesEscritura +"/"+ anyoEscritura +
 		"\nImporte Compra-Venta: " + getImporteTransaccion()+
-		"\nComisión inmobiliaria: " +  getPocentajeComision();
+		"\nComisión inmobiliaria: " +  getPocentajeComision() + "%";
     }
     
 }

@@ -12,12 +12,12 @@ public class Alquiler extends Transacccion {
     private boolean comunidadIncluida;
 
 
-    public Alquiler(String arrendador, String arrendatario, boolean amueblado, boolean comunidadIncluida, String direccion, String poblacion, int codigoPostal, String provincia, int tipoInmueble) {
+    public Alquiler(String direccion, String poblacion, int codigoPostal, String provincia, int tipoInmueble) {
 	super(direccion, poblacion, codigoPostal, provincia, tipoInmueble);
-	this.arrendador = arrendador;
-	this.arrendatario = arrendatario;
-	this.amueblado = amueblado;
-	this.comunidadIncluida = comunidadIncluida;
+	this.arrendador = "";
+	this.arrendatario = "";
+	this.amueblado = false;
+	this.comunidadIncluida = true;
     }
 
     public String getArrendador() {
@@ -58,7 +58,9 @@ public class Alquiler extends Transacccion {
 		"\nArrendador: " + arrendador + 
 		"\nArrendatario: " + arrendatario + 
 		"\nAmueblado: " + amueblado + 
-		"\n Comunidad Incluida: " + comunidadIncluida ;
+		"\nComunidad Incluida: " + comunidadIncluida +
+                "\nCuota mensual: " + getImporteTransaccion() + 
+                "\nComision inmobiliaria: " + getPocentajeComision() + "%";
     }
     
     
