@@ -30,7 +30,6 @@ public class OpcionVenta implements Venta {
         this.extinguido = false;
     }
 
-
     public void extinguirContrato() {
         if (isExtinguido()) {
             System.out.println("\"ERROR: Contrato ya extinguido\"");
@@ -61,104 +60,224 @@ public class OpcionVenta implements Venta {
     }
 
     public int getVigenciaOpcion() {
-        return vigenciaOpcion;
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+            return 0;
+        } else {
+            return vigenciaOpcion;
+        }
     }
 
     public void setVigenciaOpcion(int vigenciaOpcion) {
-        this.vigenciaOpcion = vigenciaOpcion;
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+        } else {
+            this.vigenciaOpcion = vigenciaOpcion;
+        }
+
     }
 
     public int getPenalizacion() {
-        return penalizacion;
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+            return 0;
+        } else {
+            return penalizacion;
+        }
+
     }
 
     public void setPenalizacion(int penalizacion) {
-        if (penalizacion < 0 || penalizacion > 100) {
-            System.out.println("Error: porcentaje de penalizacion incorrecto. Porcentaje por defecto: 5%");
-            this.penalizacion = 5;
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
         } else {
-            this.penalizacion = penalizacion;
+            if (penalizacion < 0 || penalizacion > 100) {
+                System.out.println("Error: porcentaje de penalizacion incorrecto. Porcentaje por defecto: 5%");
+                this.penalizacion = 5;
+            } else {
+                this.penalizacion = penalizacion;
+            }
         }
     }
 
     @Override
     public int getCodigoPostal() {
-        return codigoPostal;
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+            return 0;
+        } else {
+            return codigoPostal;
+        }
+
     }
 
     @Override
     public void setCodigoPostal(int codigoPostal) {
-        if (codigoPostal < 0 || codigoPostal > 99999) {
-            System.out.println("Error: codigo postal incorrecto. Codigo postal por defecto: 0");
-            this.codigoPostal = 0;
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
         } else {
-            this.codigoPostal = codigoPostal;
+            if (codigoPostal < 0 || codigoPostal > 99999) {
+                System.out.println("Error: codigo postal incorrecto. Codigo postal por defecto: 0");
+                this.codigoPostal = 0;
+            } else {
+                this.codigoPostal = codigoPostal;
+            }
         }
+
     }
 
     @Override
     public String getComprador() {
-        return comprador;
-    }
-
-    @Override
-    public void setComprador(String comprador) {
-        this.comprador = comprador;
-    }
-
-    @Override
-    public String getDireccion() {
-        return direccion;
-    }
-
-    @Override
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    @Override
-    public String getPoblacion() {
-        return poblacion;
-    }
-
-    @Override
-    public void setPoblacion(String poblacion) {
-        this.poblacion = poblacion;
-    }
-
-    @Override
-    public String getProvincia() {
-        return provincia;
-    }
-
-    @Override
-    public void setProvincia(String provincia) {
-        this.provincia = provincia;
-    }
-
-    @Override
-    public int getTipoInmueble() {
-        return tipoInmueble;
-    }
-
-    @Override
-    public void setTipoInmueble(int tipoInmueble) {
-        if (tipoInmueble < CASA || tipoInmueble > GARAGE) {
-            System.out.println("Error: tipo de inmueble incorrecto");
-            this.tipoInmueble = PISO;
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+            return "";
         } else {
-            this.tipoInmueble = tipoInmueble;
+            return comprador;
         }
     }
 
     @Override
+    public void setComprador(String comprador) {
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+        } else {
+            this.comprador = comprador;
+        }
+
+    }
+
+    @Override
+    public String getDireccion() {
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+            return "";
+        } else {
+            return direccion;
+        }
+    }
+
+    @Override
+    public void setDireccion(String direccion) {
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+        } else {
+            this.direccion = direccion;
+        }
+    }
+
+    @Override
+    public String getPoblacion() {
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+            return "";
+        } else {
+            return poblacion;
+        }
+    }
+
+    @Override
+    public void setPoblacion(String poblacion) {
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+        } else {
+            this.poblacion = poblacion;
+        }
+    }
+
+    @Override
+    public String getProvincia() {
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+            return "";
+        } else {
+            return provincia;
+        }
+    }
+
+    @Override
+    public void setProvincia(String provincia) {
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+        } else {
+            this.provincia = provincia;
+        }
+    }
+
+    @Override
+    public int getTipoInmueble() {
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+            return 0;
+        } else {
+            return tipoInmueble;
+        }
+    }
+
+    @Override
+    public void setTipoInmueble(int tipoInmueble) {
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+        } else {
+            if (tipoInmueble < CASA || tipoInmueble > GARAGE) {
+                System.out.println("Error: tipo de inmueble incorrecto");
+                this.tipoInmueble = PISO;
+            } else {
+                this.tipoInmueble = tipoInmueble;
+            }
+        }
+
+    }
+
+    @Override
     public String getVendedor() {
-        return vendedor;
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+            return "";
+        } else {
+            return vendedor;
+        }
     }
 
     @Override
     public void setVendedor(String vendedor) {
-        this.vendedor = vendedor;
+        if (isExtinguido()) {
+            System.out.println("ERROR: Contrato Extinguido");
+        } else {
+            this.vendedor = vendedor;
+        }
+    }
+
+    @Override
+    public String toString() {
+
+        if (isExtinguido()) {
+            System.out.println("\nERROR: Contrato Extinguido");
+            return null;
+        } else {
+            String t_inmueble = "";
+            switch (getTipoInmueble()) {
+                case CASA:
+                    t_inmueble = "Casa";
+                    break;
+                case PISO:
+                    t_inmueble = "Piso";
+                    break;
+                case GARAGE:
+                    t_inmueble = "Garage";
+                    break;
+            }
+            return "\nCONTRATO COMPROMISO DE VENTA"
+                    + "\nDireccion: " + getDireccion()
+                    + "\nPoblacion: " + getPoblacion()
+                    + "\nCP: " + getCodigoPostal()
+                    + "\nprovincia: " + getProvincia()
+                    + "\ntipoInmueble: " + t_inmueble
+                    + "\nComprador: " + getComprador()
+                    + "\nVendedor: " + getVendedor()
+                    + "\nImporte pactado: " + getImportePactado()
+                    + "\nVigencia contrato: " + getVigenciaOpcion() + " meses"
+                    + "\nPenalizacion incumplimiento: " + getPenalizacion() + "%";
+        }
     }
 
 }

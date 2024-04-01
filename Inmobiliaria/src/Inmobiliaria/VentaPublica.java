@@ -88,7 +88,7 @@ public class VentaPublica extends Transacccion implements Venta{
 
     @Override
     public String toString() {
-	return "\nCOMPRA-VENTA" + super.toString() + 
+	return "\nCOMPRA-VENTA\n" + super.toString() + 
 		"\nComprador: " + comprador + 
 		"\nVendedor: " + vendedor + 
 		"\nValor catastral: " + valorCatastral + 

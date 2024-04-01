@@ -1,4 +1,3 @@
-
 package Inmobiliaria;
 
 /**
@@ -30,7 +29,16 @@ public class Precio {
     }
 
     public void setParteDecimal(int parteDecimal) {
-        this.parteDecimal = parteDecimal;
+        if (parteDecimal < 0) {
+            System.out.println("ERROR: la parte decimal no puede ser negativa");
+            this.parteDecimal = 0;
+        }else if(parteDecimal > 99) {
+            System.out.println("ERROR: la parte decimal no puede ser mayor a 99");
+            this.parteDecimal = 0;
+        }
+        else {
+            this.parteDecimal = parteDecimal;
+        }
     }
 
     public int getParteEntera() {
@@ -38,7 +46,11 @@ public class Precio {
     }
 
     public void setParteEntera(int parteEntera) {
-        this.parteEntera = parteEntera;
+        if (parteEntera < 0) {
+            this.parteEntera = 0;
+        } else {
+            this.parteEntera = parteEntera;
+        }
     }
 
     @Override

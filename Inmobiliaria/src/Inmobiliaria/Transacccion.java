@@ -113,7 +113,7 @@ public class Transacccion {
         }
         return "Direccion: " + direccion
                 + "\nPoblacion: " + poblacion
-                + "\n CP: " + codigoPostal
+                + "\nCP: " + codigoPostal
                 + "\nprovincia: " + provincia
                 + "\ntipoInmueble: " + t_inmueble;
     }
