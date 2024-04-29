@@ -22,7 +22,7 @@ public class Medalla {
     }
     
     public String getTipoString(){
-	return null;
+	return tipo;
     }
     
     @Override

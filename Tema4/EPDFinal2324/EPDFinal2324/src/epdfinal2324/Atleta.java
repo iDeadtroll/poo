@@ -9,31 +9,37 @@ package epdfinal2324;
  *
  * @author joni-
  */
-public class Atleta extends Persona implements Competidor{
+public class Atleta extends Persona implements Competidor {
     private String disciplinas;
     private Medalla[] medallas;
     private int contadorMedallas;
-    
-    public Atleta(String nombre, String pais, int edad, String disciplina){
-	super(nombre,pais,edad);
-	this.disciplinas = disciplina;
-	this.medallas = new Medalla[MAXMEDALLAS];
+
+    public Atleta(String nombre, String pais, int edad, String disciplina) {
+        super(nombre, pais, edad);
+        this.disciplinas = disciplina.toUpperCase();
+        this.medallas = new Medalla[MAXMEDALLAS];
+        this.contadorMedallas = 0;
     }
 
     @Override
     public String getDisciplinas() {
-	return disciplinas;
+        return disciplinas;
     }
-    
-    public void añadirMedalla(Medalla medalla){
-	
+
+    public void añadirMedalla(Medalla medalla) {
+        if (contadorMedallas < MAXMEDALLAS) {
+            medallas[contadorMedallas] = medalla;
+            contadorMedallas++;
+        } else {
+            System.out.println("No se puede añadir más medallas. El atleta ya ha alcanzado el máximo de medallas.");
+        }
     }
 
     @Override
     public String toString() {
-	return "Atleta{" + "disciplinas=" + disciplinas + ", medallas=" + medallas + ", contadorMedallas=" + contadorMedallas + '}';
+        return "Atleta: " + super.toString() +"\n"+
+                "Disciplinas: " + disciplinas + 
+                "Medallas: \n" + medallas;
     }
-    
 
-    
 }
