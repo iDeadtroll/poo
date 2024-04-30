@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package epdfinal2324;
 
-/**
- *
- * @author joni-
- */
 public class Deporte {
     private String nombre;
     private Evento[] eventos;
@@ -33,6 +25,10 @@ public class Deporte {
     }
     
     public String toString(){
-	return "";
+    String cadena = "- DEPORTE: " + this.nombre + " - Lista de eventos:\n" ;
+            for(int i = 0; i<contadorEventos; i++){
+                cadena+=eventos[i] + "\n";
+            }
+	return cadena;
     }
 }

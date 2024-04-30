@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package epdfinal2324;
 
-/**
- *
- * @author joni-
- */
 public class Atleta extends Persona implements Competidor {
     private String disciplinas;
     private Medalla[] medallas;
@@ -38,13 +30,28 @@ public class Atleta extends Persona implements Competidor {
     @Override
     public String toString() {
         String cadena = "";
-        cadena = "-Atleta: " + super.toString();
+        cadena = "- ATLETA: " + super.toString();
         cadena += "\n  --Disciplinas: " + disciplinas;
         cadena += "\n  --Medallas: \n";
+        int oro = 0, plata = 0, bronce = 0;
         for (int i = 0; i < this.contadorMedallas; i++) {
-            cadena += medallas[i];
+            cadena += "    " + medallas[i] + "\n";
+
+            switch (medallas[i].getTipoString()) {
+                case "ORO":
+                    oro += 1;
+                    break;
+                case "PLATA":
+                    plata += 1;
+                    break;
+                case "BRONCE":
+                    bronce += 1;
+                    break;
+            }
+
         }
-        cadena += "\n   --*Total Medallas: ";
+        cadena += "   --*Total Medallas: " + oro + " oro, " + plata + " plata, " + bronce + " bronce";
+
         return cadena;
     }
 
