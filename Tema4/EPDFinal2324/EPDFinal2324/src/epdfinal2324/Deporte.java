@@ -15,12 +15,17 @@ public class Deporte {
     private int contadorEventos;
     
     public Deporte(String nombre, int maxEventos){
-	this.nombre = nombre;
+	this.nombre = nombre.toUpperCase();
 	this.eventos = new Evento[maxEventos];
     }
     
     public void añadirEvento(Evento evento){
-	
+        if (contadorEventos < eventos.length){
+            eventos[contadorEventos] = evento;
+            contadorEventos++;
+        }else{
+            System.out.println("Se ha alcanzado el máximo de eventos para este deporte");
+        }
     }
     
     public String getNombre(){

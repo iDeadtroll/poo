@@ -37,9 +37,15 @@ public class Atleta extends Persona implements Competidor {
 
     @Override
     public String toString() {
-        return "Atleta: " + super.toString() +"\n"+
-                "Disciplinas: " + disciplinas + 
-                "Medallas: \n" + medallas;
+        String cadena = "";
+        cadena = "-Atleta: " + super.toString();
+        cadena += "\n  --Disciplinas: " + disciplinas;
+        cadena += "\n  --Medallas: \n";
+        for (int i = 0; i < this.contadorMedallas; i++) {
+            cadena += medallas[i];
+        }
+        cadena += "\n   --*Total Medallas: ";
+        return cadena;
     }
 
 }
