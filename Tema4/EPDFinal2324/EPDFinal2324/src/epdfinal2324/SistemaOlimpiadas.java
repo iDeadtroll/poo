@@ -21,10 +21,34 @@ public class SistemaOlimpiadas {
     }
     
     public void registrarAtleta(Atleta atleta){
-    
+        if (contadorAtletas < atletas.length){
+            atletas[contadorAtletas]= atleta;
+            contadorAtletas++;
+        }else{
+            System.out.println("Se ha alcanzado el máximo de atletas");
+        }
     }
     
     public void añadirDeporte(Deporte deporte){
-    
+        if (contadorDeportes < deportes.length){
+            deportes[contadorDeportes]= deporte;
+            contadorDeportes++;
+        }else{
+            System.out.println("Se ha alcanzado el máximo de deportes");
+        }
+    }
+
+    public String mostrarSistema(){
+        String cadena = "## SISTEMA OLIMPIADAS ##\n\n";
+                cadena += "** ATLETAS REGISTRADO **\n";
+                for (int i = 0 ; i < contadorAtletas ; i++){
+                    cadena += atletas[i] + "\n";
+                }
+                cadena += "** DEPORTES Y EVENTOS **\n";
+                for (int i = 0 ; i < contadorDeportes ; i++){
+                    cadena += deportes[i] + "\n";
+                }
+
+        return cadena;
     }
 }
