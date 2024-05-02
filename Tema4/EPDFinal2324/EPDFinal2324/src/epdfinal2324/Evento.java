@@ -9,7 +9,7 @@ public class Evento {
 
     public Evento(String nombre, String fecha, int maxAtletas) {
         this.nombre = nombre;
-        this.fecha = fecha;
+        setFecha(fecha);
         this.atletas = new Atleta[maxAtletas];
     }
 
@@ -27,6 +27,7 @@ public class Evento {
     }
 
     public void setFecha(String f) {
+    // TODO: comprobar que se cumple el patrón 'dd/mm/aaaa', caso contrario se inicializa a '01/01/1900'
         this.fecha = f;
     }
 
@@ -35,10 +36,10 @@ public class Evento {
         String cadena = "   -> EVENTO: " + this.nombre + " <" + this.fecha + ">\n";
         if (contadorAtletas != 0){
             for (int i = 0; i < contadorAtletas; i++){
-                cadena += "   ----> " + atletas[i] + "\n";
+                cadena += "   ----> " + atletas[i].nombre + " ("+ atletas[i].pais +") " +"\n";
             }
         }else{
-            System.out.println("        <Aún no hay atletas registrados en este evento>" + "\n");
+            cadena +="        <Aún no hay atletas registrados en este evento>" + "\n";
         }
         return cadena;
     }
