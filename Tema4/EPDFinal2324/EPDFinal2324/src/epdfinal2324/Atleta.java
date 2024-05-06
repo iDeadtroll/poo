@@ -18,6 +18,8 @@ public class Atleta extends Persona implements Competidor {
         return disciplinas;
     }
 
+    //TODO: hacer filtro por disciplinas
+
     public void añadirMedalla(Medalla medalla) {
         if (contadorMedallas < MAXMEDALLAS) {
             medallas[contadorMedallas] = medalla;
@@ -25,6 +27,27 @@ public class Atleta extends Persona implements Competidor {
         } else {
             System.out.println("No se puede añadir más medallas. El atleta ya ha alcanzado el máximo de medallas.");
         }
+    }
+
+    //TODO: probar contador de medallas
+    public int totalMedallas() {
+        int contador = 0;
+        for (int i = 0; i < contadorMedallas; i++) {
+            contador++;
+        }
+        return contador;
+    }
+
+    //TODO: probar contador de medallas por tipo
+    public int totalMedallas(String t) {
+        int contador = 0;
+        String tipo = t.toUpperCase();
+        for (int i = 0; i < contadorMedallas; i++) {
+            if(tipo.equals(medallas[i].getTipoString())){
+                contador++;
+            }
+        }
+        return contador;
     }
 
     @Override
