@@ -1,10 +1,6 @@
 
 package epdfinal2324;
 
-/**
- *
- * @author joni-
- */
 public interface Competidor {
     public String getNombre();
     public String getPais();

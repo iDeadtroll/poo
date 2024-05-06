@@ -31,11 +31,11 @@ public class Atleta extends Persona implements Competidor {
     public String toString() {
         String cadena = "";
         cadena = "- ATLETA: " + super.toString();
-        cadena += "\n  --Disciplinas: " + disciplinas;
-        cadena += "\n  --Medallas: \n";
+        cadena += "\n  -- Disciplinas: " + disciplinas;
+        cadena += "\n  -- Medallas: \n";
         int oro = 0, plata = 0, bronce = 0;
         for (int i = 0; i < this.contadorMedallas; i++) {
-            cadena += "    " + medallas[i] + "\n";
+            cadena += "    ---" + medallas[i] + "\n";
 
             switch (medallas[i].getTipoString()) {
                 case "ORO":
@@ -50,7 +50,7 @@ public class Atleta extends Persona implements Competidor {
             }
 
         }
-        cadena += "   --*Total Medallas: " + oro + " oro, " + plata + " plata, " + bronce + " bronce";
+        cadena += "  --*Total Medallas: " + oro + " oro, " + plata + " plata, " + bronce + " bronce";
 
         return cadena;
     }

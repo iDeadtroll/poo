@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package epdfinal2324;
 
-/**
- *
- * @author joni-
- */
 public class SistemaOlimpiadas {
     private Atleta[] atletas;
     private Deporte[] deportes;
@@ -38,17 +30,17 @@ public class SistemaOlimpiadas {
         }
     }
 
-    public String mostrarSistema(){
+    public void mostrarSistema(){
         String cadena = "## SISTEMA OLIMPIADAS ##\n\n";
-                cadena += "** ATLETAS REGISTRADO **\n";
+                cadena += "** ATLETAS REGISTRADOS **\n";
                 for (int i = 0 ; i < contadorAtletas ; i++){
                     cadena += atletas[i] + "\n";
                 }
-                cadena += "** DEPORTES Y EVENTOS **\n";
+                cadena += "\n** DEPORTES Y EVENTOS **\n";
                 for (int i = 0 ; i < contadorDeportes ; i++){
                     cadena += deportes[i] + "\n";
                 }
 
-        return cadena;
+        System.err.println(cadena);
     }
 }
