@@ -30,16 +30,17 @@ public class Atleta extends Persona implements Competidor {
     }
 
     //TODO: probar contador de medallas
-    public int totalMedallas() {
+    public String totalMedallas() {
         int contador = 0;
         for (int i = 0; i < contadorMedallas; i++) {
             contador++;
         }
-        return contador;
+        String count = Integer.toString(contador);
+        return count;
     }
 
     //TODO: probar contador de medallas por tipo
-    public int totalMedallas(String t) {
+    public String totalMedallas(String t) {
         int contador = 0;
         String tipo = t.toUpperCase();
         for (int i = 0; i < contadorMedallas; i++) {
@@ -47,7 +48,8 @@ public class Atleta extends Persona implements Competidor {
                 contador++;
             }
         }
-        return contador;
+        String count = Integer.toString(contador);
+        return count;
     }
 
     @Override
