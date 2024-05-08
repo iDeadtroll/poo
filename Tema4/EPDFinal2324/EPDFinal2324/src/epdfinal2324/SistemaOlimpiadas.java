@@ -30,6 +30,16 @@ public class SistemaOlimpiadas {
         }
     }
 
+    public void medallasTotales(){
+        String[] medallasPorAtleta = new String[contadorAtletas];
+        for (int i = 0; i < contadorAtletas; i++){
+            medallasPorAtleta[i] = this.atletas[i].getNombre() + "," + this.atletas[i].totalMedallas("oro");
+        }
+        for (String result: medallasPorAtleta){
+            System.out.println(result);
+        }
+    }
+
     public void mostrarSistema(){
         String cadena = "## SISTEMA OLIMPIADAS ##\n\n";
                 cadena += "** ATLETAS REGISTRADOS **\n";
@@ -41,6 +51,6 @@ public class SistemaOlimpiadas {
                     cadena += deportes[i] + "\n";
                 }
 
-        System.err.println(cadena);
+        System.out.println(cadena);
     }
 }

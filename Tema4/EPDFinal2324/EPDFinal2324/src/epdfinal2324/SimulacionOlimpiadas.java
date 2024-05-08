@@ -62,6 +62,7 @@ public class SimulacionOlimpiadas {
                 // Mostrar el sistema
 
                 sistema.mostrarSistema();
+                sistema.medallasTotales();
         }
 
 }
