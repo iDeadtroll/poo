@@ -18,6 +18,12 @@ public class Atleta extends Persona implements Competidor {
         return disciplinas;
     }
 
+    //TODO: Ordenar atletas por su nombre
+
+    //TODO: Ordenar atletas por su edad
+
+    //TODO: Ordenar atletas por su numero de medallas
+    
     //TODO: hacer filtro por disciplinas
 
     public void añadirMedalla(Medalla medalla) {
