@@ -1,6 +1,8 @@
 
 package epdfinal2324;
 
+import java.util.Arrays;
+
 public class SistemaOlimpiadas {
     private Atleta[] atletas;
     private Deporte[] deportes;
@@ -30,15 +32,55 @@ public class SistemaOlimpiadas {
         }
     }
 
-    public void medallasTotales(){
+    public void medallasTotales(String tipoMedalla){
         String[] medallasPorAtleta = new String[contadorAtletas];
         for (int i = 0; i < contadorAtletas; i++){
-            medallasPorAtleta[i] = this.atletas[i].getNombre() + "," + this.atletas[i].totalMedallas("oro");
+            medallasPorAtleta[i] = this.atletas[i].getNombre() + ", " + this.atletas[i].totalMedallas(tipoMedalla) + " medallas " + tipoMedalla;
         }
         for (String result: medallasPorAtleta){
             System.out.println(result);
         }
     }
+
+    public void medallasTotales(){
+        String[] medallasPorAtleta = new String[contadorAtletas];
+        for (int i = 0; i < contadorAtletas; i++){
+            medallasPorAtleta[i] = this.atletas[i].getNombre() + ", " + this.atletas[i].totalMedallas();
+        }
+        for (String result: medallasPorAtleta){
+            System.out.println(result);
+        }
+    }
+
+    public void listarAtletasAlfabeticamente() {
+        Arrays.sort(this.atletas, 0, contadorAtletas);
+        for (Atleta atleta : this.atletas) {
+            if (atleta != null) {
+                System.out.println(atleta.getNombre());
+            }
+        }
+    }
+
+    public void listarAtletasPorEdad() {
+        AtletaComparatorEdad comparator = new AtletaComparatorEdad();
+        Arrays.sort(this.atletas, 0, contadorAtletas, comparator);
+        for (Atleta atleta : this.atletas) {
+            if (atleta != null) {
+                System.out.println(atleta.getNombre() + " - " + atleta.getEdad());
+            }
+        }
+    }
+
+    public void listarAtletasPorPaisEdad() {
+        AtletaComparatorPaisEdad comparator = new AtletaComparatorPaisEdad();
+        Arrays.sort(this.atletas, 0, contadorAtletas, comparator);
+        for (Atleta atleta : this.atletas) {
+            if (atleta != null) {
+                System.out.println(atleta.getNombre() + " - " + atleta.getPais() + " - " + atleta.getEdad());
+            }
+        }
+    }
+    
 
     public void mostrarSistema(){
         String cadena = "## SISTEMA OLIMPIADAS ##\n\n";

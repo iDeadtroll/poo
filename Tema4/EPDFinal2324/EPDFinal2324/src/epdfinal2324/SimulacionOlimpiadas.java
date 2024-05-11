@@ -3,7 +3,7 @@ package epdfinal2324;
 
 public class SimulacionOlimpiadas {
 
-        public static void main(String[] args) {
+        public static void main(String[] args) throws EdadInvalidaException {
 
                 SistemaOlimpiadas sistema = new SistemaOlimpiadas(20, 5);
 
@@ -62,7 +62,29 @@ public class SimulacionOlimpiadas {
                 // Mostrar el sistema
 
                 sistema.mostrarSistema();
+                System.out.println("Total de medallas: ");
                 sistema.medallasTotales();
+
+                System.out.println("\nTotal de medallas oro: ");
+                sistema.medallasTotales("ORO");
+
+                System.out.println("\nOrdenar atletas alfabéticamente:");
+                sistema.listarAtletasAlfabeticamente();
+
+                System.out.println("\nOrdenar atletas por edad:");
+                sistema.listarAtletasPorEdad();
+
+                System.out.println("\nModificar edad de atleta: " + atletaNat1.getNombre() + " a -1 años)");
+                try {   
+                        atletaNat1.setEdad(-1);
+                } catch (EdadInvalidaException e) {
+                        System.err.println(e.getMessage());
+                        atletaNat1.setEdad(18);
+                        System.out.println("Edad modificada a 18 años.");
+                }
+
+                System.out.println("\nOrdenar atletas por país y edad:");
+                sistema.listarAtletasPorPaisEdad();
         }
 
 }

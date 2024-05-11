@@ -1,7 +1,7 @@
 
 package epdfinal2324;
 
-public class Atleta extends Persona implements Competidor {
+public class Atleta extends Persona implements Competidor, Comparable {
     private String disciplinas;
     private Medalla[] medallas;
     private int contadorMedallas;
@@ -18,7 +18,13 @@ public class Atleta extends Persona implements Competidor {
         return disciplinas;
     }
 
-    //TODO: hacer filtro por disciplinas
+
+    @Override
+    public int compareTo(Object o) {
+        Atleta a = (Atleta) o;
+        return this.getNombre().compareTo(a.getNombre());
+    }    
+    
 
     public void añadirMedalla(Medalla medalla) {
         if (contadorMedallas < MAXMEDALLAS) {
@@ -29,17 +35,10 @@ public class Atleta extends Persona implements Competidor {
         }
     }
 
-    //TODO: probar contador de medallas
-    public String totalMedallas() {
-        int contador = 0;
-        for (int i = 0; i < contadorMedallas; i++) {
-            contador++;
-        }
-        String count = Integer.toString(contador);
-        return count;
+    public int totalMedallas() {
+        return contadorMedallas;
     }
 
-    //TODO: probar contador de medallas por tipo
     public String totalMedallas(String t) {
         int contador = 0;
         String tipo = t.toUpperCase();
