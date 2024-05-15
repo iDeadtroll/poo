@@ -26,12 +26,25 @@ public class Atleta extends Persona implements Competidor, Comparable {
     }    
     
 
-    public void añadirMedalla(Medalla medalla) {
+    public void añadirMedalla(Medalla medalla) throws MaxMedallasException {
         if (contadorMedallas < MAXMEDALLAS) {
             medallas[contadorMedallas] = medalla;
             contadorMedallas++;
         } else {
-            System.out.println("No se puede añadir más medallas. El atleta ya ha alcanzado el máximo de medallas.");
+            throw new MaxMedallasException("No se puede añadir más medallas. El atleta ya ha alcanzado el máximo de medallas.");
+        }
+    }
+
+    public void añadirVariasMedallas(Atleta atleta, Medalla[] nuevasMedallas) {
+        for (Medalla medalla : nuevasMedallas) {
+            try {
+                atleta.añadirMedalla(medalla);
+            } catch (MaxMedallasException e) {
+                System.out.println(e.getMessage());
+                break;
+            } catch (Exception e) {
+                System.out.println("Error al añadir medalla: " + e.getMessage());
+            }
         }
     }
 

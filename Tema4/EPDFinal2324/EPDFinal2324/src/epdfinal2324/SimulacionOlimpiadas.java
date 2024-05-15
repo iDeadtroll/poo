@@ -3,7 +3,7 @@ package epdfinal2324;
 
 public class SimulacionOlimpiadas {
 
-        public static void main(String[] args) throws EdadInvalidaException {
+        public static void main(String[] args) throws EdadInvalidaException, MaxMedallasException { // Propaga la excepción
 
                 SistemaOlimpiadas sistema = new SistemaOlimpiadas(20, 5);
 
@@ -75,12 +75,17 @@ public class SimulacionOlimpiadas {
                 sistema.listarAtletasPorEdad();
 
                 System.out.println("\nModificar edad de atleta: " + atletaNat1.getNombre() + " a -1 años)");
+
+                final int EDAD_PREDETERMINADA = 18;
+
                 try {   
-                        atletaNat1.setEdad(-1);
-                } catch (EdadInvalidaException e) {
-                        System.err.println(e.getMessage());
-                        atletaNat1.setEdad(18);
-                        System.out.println("Edad modificada a 18 años.");
+                    atletaNat1.setEdad(-1);
+                } catch (EdadInvalidaException e) { // Captura la excepción específica
+                    System.err.println(e.getMessage());
+                    atletaNat1.setEdad(EDAD_PREDETERMINADA);
+                    System.out.println("Edad modificada a " + EDAD_PREDETERMINADA + " años.");
+                } catch (Exception e) { // Captura otras excepciones
+                    System.err.println("Ocurrió un error al establecer la edad: " + e.getMessage());
                 }
 
                 System.out.println("\nOrdenar atletas por país y edad:");

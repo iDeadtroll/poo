@@ -24,9 +24,9 @@ public class Persona {
 	return edad;
     }
 
-    public void setEdad(int edad) throws EdadInvalidaException {
+    public void setEdad(int edad) throws EdadInvalidaException { 
         if (edad < 0){
-            throw new EdadInvalidaException("Error: el valor 'edad' no puede ser negativo.");
+            throw new EdadInvalidaException("Error: el valor 'edad' no puede ser negativo."); 
         } else {
             this.edad = edad;
         }
