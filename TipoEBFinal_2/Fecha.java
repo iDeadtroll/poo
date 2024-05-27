@@ -1,14 +1,36 @@
-import java.time.LocalDate;
+package TipoEBFinal_2;
+
+import java.time.LocalDateTime;
 
 public class Fecha implements Comparable {
     private int dia;
     private int mes;
     private int anio;
+    private int hora;
+    private int minuto;
 
-    public Fecha(int dia, int mes, int anio) {
+    public Fecha(int dia, int mes, int anio, int hora, int minuto) {
         this.dia = dia;
         this.mes = mes;
         this.anio = anio;
+        this.hora = hora;
+        this.minuto = minuto;
+    }
+
+    public int getHora() {
+        return hora;
+    }
+
+    public void setHora(int hora) {
+        this.hora = hora;
+    }
+
+    public int getMinuto() {
+        return minuto;
+    }
+
+    public void setMinuto(int minuto) {
+        this.minuto = minuto;
     }
 
     public int getDia() {
@@ -36,7 +58,7 @@ public class Fecha implements Comparable {
     }
 
     public String toString() {
-        return dia + "/" + mes + "/" + anio;
+        return dia + "/" + mes + "/" + anio + " " + hora + ":" + minuto;
     }
 
     public boolean equals(Object obj) {
@@ -49,11 +71,13 @@ public class Fecha implements Comparable {
     }
 
     public static Fecha hoy() {
-        LocalDate currentDate = LocalDate.now();
+        LocalDateTime currentDate = LocalDateTime.now();
         int dia = currentDate.getDayOfMonth();
         int mes = currentDate.getMonthValue();
         int anio = currentDate.getYear();
-        return new Fecha(dia, mes, anio);
+        int hora = currentDate.getHour();
+        int minuto = currentDate.getMinute();
+        return new Fecha(dia, mes, anio, hora, minuto);
     }
 
     // Orden natural ascendente: por año, mes y día
@@ -65,10 +89,17 @@ public class Fecha implements Comparable {
             cpm = this.mes - f.mes;
             if (cpm == 0) {
                 cpm = this.dia - f.dia;
+                if (cpm == 0) {
+                    cpm = this.hora - f.hora;
+                    if (cpm == 0) {
+                        cpm = this.minuto - f.minuto;
+                    }
+                }
             }
         }
         return cpm;
     }
+
 
     // Orden natural descendente: por año, mes y día
     // @Override
