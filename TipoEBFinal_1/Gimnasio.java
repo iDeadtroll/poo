@@ -47,7 +47,7 @@ public class Gimnasio {
     }
 
     public String toString(){
-        String s = "*** Abonados del Gimnacion ***\n";
+        String s = "*** Abonados del Gimnasio ***\n";
         for (int i = 0; i < numabonados; i++) {
             s += abonados[i] + "\n";
         }

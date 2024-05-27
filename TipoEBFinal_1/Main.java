@@ -6,7 +6,8 @@ public class Main {
         try {
             g.añadirAbonado("Juan", "García", "12345678A");
             g.añadirAbonado("Pedro", "Gómez", "87654321B");
-            g.añadirAbonado("Ana", "Martínez", "12345678A");
+            g.añadirAbonado("Ana", "Martínez", "12345678C");
+            g.añadirAbonado("Ana", "Martínez", "12345678C");
         } catch (AbonadoException e) {
             System.out.println(e.getMessage());
         }

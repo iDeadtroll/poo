@@ -29,9 +29,20 @@ public class Abonado extends Persona{
         return activo; 
     }
 
-    public String toString() {
-        return "#" + numeroAbonado + " - " +super.toString() 
-        + (activo ? "(Fecha alta: " + fechaAlta : "(Fecha alta: " + fechaAlta + ", Fecha baja: " + fechaBaja + ")");
+    public String toString(){
+        String s = "#" + numeroAbonado +" - "+ super.toString();
+            s+= " (Fecha alta: " + fechaAlta;
+            if(!activo){
+                s+= ", Fecha baja: " + fechaBaja;
+            }
+            s+= ")";
+
+        return s;
     }
-    
+
+    // public String toString() {
+    //     return "#" + numeroAbonado + " - " +super.toString() 
+    //     + (activo ? "(Fecha alta: " + fechaAlta + ")" : "(Fecha alta: " + fechaAlta + ", Fecha baja: " + fechaBaja + ")");
+    // }
+ 
 }
